@@ -22,65 +22,71 @@ namespace DA_Assets.ULB
         const string Vector3IntGuid = "f4d8364073ae4dc7b37ed50d65ed90b0";
         const string Vector4Guid = "cad255502e8441399b8fba29cb96627b";
         private static GameObject _harnessGO;
+#if UNITY_2022_1_OR_NEWER
         private static UitkDoubleField _doubleLinker;
         private static UitkEnumField _enumLinker;
         private static UitkFloatField _floatLinker;
-        private static UitkImage _imageLinker;
         private static UitkIntegerField _integerLinker;
         private static UitkLongField _longLinker;
-        private static UitkProgressBar _progressLinker;
-        private static UitkRadioButton _radioLinker;
-        private static UitkSlider _sliderLinker;
-        private static UitkSliderInt _sliderIntLinker;
-        private static UitkTextField _textLinker;
         private static UitkVector2Field _vector2Linker;
         private static UitkVector2IntField _vector2IntLinker;
         private static UitkVector3Field _vector3Linker;
         private static UitkVector3IntField _vector3IntLinker;
         private static UitkVector4Field _vector4Linker;
+#endif
+        private static UitkImage _imageLinker;
+        private static UitkProgressBar _progressLinker;
+        private static UitkRadioButton _radioLinker;
+        private static UitkSlider _sliderLinker;
+        private static UitkSliderInt _sliderIntLinker;
+        private static UitkTextField _textLinker;
 
         public static void Initialize(UIDocument document, ValueUpdater provider, GameObject harnessGO)
         {
             _harnessGO = harnessGO;
-
+#if UNITY_2022_1_OR_NEWER
             _doubleLinker = CreateLinker<UitkDoubleField>(document, provider, DoubleGuid, nameof(ValueUpdater.DoubleValue));
             _enumLinker = CreateLinker<UitkEnumField>(document, provider, EnumGuid, nameof(ValueUpdater.EnumValue));
             _floatLinker = CreateLinker<UitkFloatField>(document, provider, FloatGuid, nameof(ValueUpdater.FloatValue));
-            _imageLinker = CreateLinker<UitkImage>(document, provider, ImageGuid, nameof(ValueUpdater.SpriteValue));
             _integerLinker = CreateLinker<UitkIntegerField>(document, provider, IntegerGuid, nameof(ValueUpdater.IntegerValue));
             _longLinker = CreateLinker<UitkLongField>(document, provider, LongGuid, nameof(ValueUpdater.LongValue));
-            _progressLinker = CreateLinker<UitkProgressBar>(document, provider, ProgressGuid, nameof(ValueUpdater.ProgressValue));
-            _radioLinker = CreateLinker<UitkRadioButton>(document, provider, RadioGuid, nameof(ValueUpdater.RadioValue));
-            _sliderLinker = CreateLinker<UitkSlider>(document, provider, SliderGuid, nameof(ValueUpdater.SliderValue));
-            _sliderIntLinker = CreateLinker<UitkSliderInt>(document, provider, SliderIntGuid, nameof(ValueUpdater.SliderIntValue));
-            _textLinker = CreateLinker<UitkTextField>(document, provider, TextGuid, nameof(ValueUpdater.TextFieldValue));
             _vector2Linker = CreateLinker<UitkVector2Field>(document, provider, Vector2Guid, nameof(ValueUpdater.Vector2Value));
             _vector2IntLinker = CreateLinker<UitkVector2IntField>(document, provider, Vector2IntGuid, nameof(ValueUpdater.Vector2IntValue));
             _vector3Linker = CreateLinker<UitkVector3Field>(document, provider, Vector3Guid, nameof(ValueUpdater.Vector3Value));
             _vector3IntLinker = CreateLinker<UitkVector3IntField>(document, provider, Vector3IntGuid, nameof(ValueUpdater.Vector3IntValue));
             _vector4Linker = CreateLinker<UitkVector4Field>(document, provider, Vector4Guid, nameof(ValueUpdater.Vector4Value));
+#endif
+            _imageLinker = CreateLinker<UitkImage>(document, provider, ImageGuid, nameof(ValueUpdater.SpriteValue));
+            _progressLinker = CreateLinker<UitkProgressBar>(document, provider, ProgressGuid, nameof(ValueUpdater.ProgressValue));
+            _radioLinker = CreateLinker<UitkRadioButton>(document, provider, RadioGuid, nameof(ValueUpdater.RadioValue));
+            _sliderLinker = CreateLinker<UitkSlider>(document, provider, SliderGuid, nameof(ValueUpdater.SliderValue));
+            _sliderIntLinker = CreateLinker<UitkSliderInt>(document, provider, SliderIntGuid, nameof(ValueUpdater.SliderIntValue));
+            _textLinker = CreateLinker<UitkTextField>(document, provider, TextGuid, nameof(ValueUpdater.TextFieldValue));
+
         }
 
         public static BindingSnapshot CaptureActualSnapshot()
         {
             return new BindingSnapshot
             {
+#if UNITY_2022_1_OR_NEWER
                 DoubleValue = _doubleLinker.Element.value,
                 EnumValue = (BindingSampleEnum)_enumLinker.Element.value,
                 FloatValue = _floatLinker.Element.value,
-                SpriteValue = _imageLinker.Element.sprite,
                 IntegerValue = _integerLinker.Element.value,
                 LongValue = _longLinker.Element.value,
+                Vector2Value = _vector2Linker.Element.value,
+                Vector2IntValue = _vector2IntLinker.Element.value,
+                Vector3Value = _vector3Linker.Element.value,
+                Vector3IntValue = _vector3IntLinker.Element.value,
+                Vector4Value = _vector4Linker.Element.value,
+#endif
+                SpriteValue = _imageLinker.Element.sprite,
                 ProgressValue = _progressLinker.Element.value,
                 RadioValue = _radioLinker.Element.value,
                 SliderValue = _sliderLinker.Element.value,
                 SliderIntValue = _sliderIntLinker.Element.value,
                 TextFieldValue = _textLinker.Element.value,
-                Vector2Value = _vector2Linker.Element.value,
-                Vector2IntValue = _vector2IntLinker.Element.value,
-                Vector3Value = _vector3Linker.Element.value,
-                Vector3IntValue = _vector3IntLinker.Element.value,
-                Vector4Value = _vector4Linker.Element.value
             };
         }
 
