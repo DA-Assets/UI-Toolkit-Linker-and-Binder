@@ -173,7 +173,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 22818356}
-        m_TargetAssemblyTypeName: DA_Assets.UEL.UelExample, Assembly-CSharp
+        m_TargetAssemblyTypeName: DA_Assets.ULB.UelExample, Assembly-CSharp
         m_MethodName: AddPhoto_OnClick
         m_Mode: 1
         m_Arguments:
@@ -253,7 +253,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 558177093}
-        m_TargetAssemblyTypeName: DA_Assets.UEL.UelExample, Assembly-CSharp
+        m_TargetAssemblyTypeName: DA_Assets.ULB.UelExample, Assembly-CSharp
         m_MethodName: AddPhoto_OnClick
         m_Mode: 1
         m_Arguments:
@@ -427,7 +427,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1219956223}
-        m_TargetAssemblyTypeName: DA_Assets.UEL.UelExample, Assembly-CSharp
+        m_TargetAssemblyTypeName: DA_Assets.ULB.UelExample, Assembly-CSharp
         m_MethodName: AddPhoto_OnClick
         m_Mode: 1
         m_Arguments:
@@ -510,7 +510,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1606157398}
-        m_TargetAssemblyTypeName: DA_Assets.UEL.UelExample, Assembly-CSharp
+        m_TargetAssemblyTypeName: DA_Assets.ULB.UelExample, Assembly-CSharp
         m_MethodName: AddPhoto_OnClick
         m_Mode: 1
         m_Arguments:
